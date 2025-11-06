@@ -14,6 +14,7 @@ export function TodoFilters({ value, counts, onChange }: TodoFiltersProps) {
     { value: 'active', label: t('filters.active') },
     { value: 'completed', label: t('filters.completed') },
   ];
+  const formatCount = (count: number) => (count >= 1000 ? '999+' : count);
 
   return (
     <nav className="todo-filters" aria-label="Filter todos">
@@ -25,7 +26,7 @@ export function TodoFilters({ value, counts, onChange }: TodoFiltersProps) {
           onClick={() => onChange(option.value)}
         >
           <span>{option.label}</span>
-          <span className="todo-filters__count">{counts[option.value]}</span>
+          <span className="todo-filters__count">{formatCount(counts[option.value])}</span>
         </button>
       ))}
     </nav>

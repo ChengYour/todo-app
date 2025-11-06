@@ -189,9 +189,10 @@ body {
 .todo-filters__button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  justify-content: space-between;
-  flex: 1 1 140px;
+  gap: 0.45rem;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
   border: 1px solid transparent;
@@ -245,7 +246,7 @@ body {
 
 .todo-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: clamp(0.75rem, 3vw, 1.25rem);
   padding: 0.95rem 1.1rem;
@@ -326,16 +327,18 @@ body {
 
 .todo-item__actions {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: stretch;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 0.35rem;
   line-height: 1.2;
 }
 
 .todo-item__action {
   border: none;
   border-radius: 999px;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.9rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
   font-weight: 500;
   background: hsl(210, 40%, 96%);
   color: hsl(220, 12%, 35%);
@@ -345,6 +348,7 @@ body {
     color 0.18s ease,
     transform 0.18s ease;
   line-height: 1.2;
+  min-width: 5.5rem;
 }
 
 .todo-item__action.is-primary {

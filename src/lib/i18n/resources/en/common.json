@@ -8,7 +8,7 @@
   "filters": {
     "all": "All",
     "active": "Active",
-    "completed": "Completed"
+    "completed": "Done"
   },
   "empty": {
     "all": "No tasks yet.",
