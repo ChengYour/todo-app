@@ -1,6 +1,12 @@
 :root {
   color-scheme: light dark;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -9,7 +15,9 @@
   background-color: hsl(210, 40%, 98%);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -152,7 +160,10 @@ body {
   padding: 0.6rem 1.5rem;
   border-radius: 999px;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
   line-height: 1.2;
   align-self: flex-end;
 }
@@ -188,7 +199,10 @@ body {
   color: hsl(220, 12%, 35%);
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease,
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
     transform 0.18s ease;
   line-height: 1.2;
 }
@@ -239,7 +253,10 @@ body {
   background: hsl(0, 0%, 100%);
   border: 1px solid hsl(210, 40%, 92%);
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.18s ease;
 }
 
 .todo-item:hover {
@@ -323,7 +340,10 @@ body {
   background: hsl(210, 40%, 96%);
   color: hsl(220, 12%, 35%);
   cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
   line-height: 1.2;
 }
 

@@ -28,7 +28,10 @@ export function TodoItem({ todo, onToggle, onUpdate, onRemove }: TodoItemProps) 
     if (isEditing && inputRef.current) {
       adjustHeight(inputRef.current);
       inputRef.current.focus();
-      inputRef.current.setSelectionRange(inputRef.current.value.length, inputRef.current.value.length);
+      inputRef.current.setSelectionRange(
+        inputRef.current.value.length,
+        inputRef.current.value.length,
+      );
     }
   }, [isEditing]);
 
