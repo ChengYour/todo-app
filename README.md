@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [中文](#中文)
+  - [已完成的功能](#已完成的功能)
+  - [改进方向](#改进方向)
+  - [待添加的功能](#待添加的功能)
+- [English](#english)
+  - [Completed Features](#completed-features)
+  - [Areas for Improvement](#areas-for-improvement)
+  - [Planned Enhancements](#planned-enhancements)
 
-Currently, two official plugins are available:
+## 中文
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 已完成的功能
 
-## React Compiler
+- 基本操作：新增、编辑、删除、完成状态切换
+- 过滤：全部、进行中、已完成
+- 国际化：中英切换，并在 `localStorage` 记住语言偏好
+- UI 体验：响应式布局、语言切换时无布局抖动
+- 状态与存储：使用 Zustand 管理待办列表，数据暂时保存在 `localStorage` 中
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 改进方向
 
-## Expanding the ESLint configuration
+- 数据持久化仅在浏览器本地，后续需要通过后端 API 保存到数据库
+- 当前样式纯手写 CSS，没有使用 UI 组件库或 CSS 框架
+- 移动端适配目前依赖弹性布局，若界面变复杂需要根据媒体查询，针对不同的端渲染不同的组件
+- Store 和组件未做性能优化（批处理、虚拟列表等）
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 待添加的功能
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 日期/时间字段：计划提醒、截止时间等
+- 点击删除添加二次确认，或者添加 Undo / 回收站机制，支持恢复误删任务
+- 拖拽排序（原生实现或引入拖拽库）
+- 单元测试与端到端测试，覆盖核心业务流程
+- 与后端 API 的同步逻辑
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+## English
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Completed Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+- Core CRUD actions: create, edit, delete, toggle completion state
+- Filtering views: All, Active, Completed
+- I18n: zh/en switching with preference stored in `localStorage`
+- UI experience: responsive layout with no noticeable shift when switching languages
+- State & persistence: Zustand manages todos; data is currently stored in `localStorage`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+### Areas for Improvement
+
+- Persistence is still client-side; next step is persisting via backend APIs and a real database
+- Styling is hand-written CSS; no UI component or CSS utility library is used yet
+- Mobile adaptation relies on flexible layout only; complex screens may need media-query-driven, device-specific components
+- Store/components haven’t been tuned for performance (batching, virtualization, etc.)
+
+### Planned Enhancements
+
+- Date/time metadata: reminders, due dates, scheduling
+- Secondary confirmation for deletion or undo / recycle bin for recovering deleted tasks
+- Drag-and-drop ordering (native implementation or third-party library)
+- Unit and end-to-end test coverage for critical flows
+- Synchronization with backend APIs
