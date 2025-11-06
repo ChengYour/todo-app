@@ -1,0 +1,29 @@
+{
+  "title": "待办清单",
+  "subtitle": "高效管理你的任务",
+  "composer": {
+    "placeholder": "添加新任务",
+    "submit": "添加"
+  },
+  "filters": {
+    "all": "全部",
+    "active": "进行中",
+    "completed": "已完成"
+  },
+  "empty": {
+    "all": "暂无任务",
+    "active": "暂无进行中的任务",
+    "completed": "暂无已完成的任务"
+  },
+  "todo": {
+    "toggle": "切换完成状态",
+    "save": "保存",
+    "cancel": "取消",
+    "remove": "删除"
+  },
+  "language": {
+    "label": "语言",
+    "en": "English",
+    "zh": "中文"
+  }
+}

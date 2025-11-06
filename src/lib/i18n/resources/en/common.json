@@ -1,0 +1,29 @@
+{
+  "title": "Todos",
+  "subtitle": "Manage your tasks efficiently",
+  "composer": {
+    "placeholder": "Add a new task",
+    "submit": "Add"
+  },
+  "filters": {
+    "all": "All",
+    "active": "Active",
+    "completed": "Completed"
+  },
+  "empty": {
+    "all": "No tasks yet.",
+    "active": "No active tasks yet.",
+    "completed": "No completed tasks yet."
+  },
+  "todo": {
+    "toggle": "Toggle todo",
+    "save": "Save",
+    "cancel": "Cancel",
+    "remove": "Remove"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "zh": "中文"
+  }
+}

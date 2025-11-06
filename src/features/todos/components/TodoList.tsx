@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { Todo, TodoFilter } from '../types';
 import { TodoItem } from './TodoItem';
 
@@ -9,15 +10,11 @@ interface TodoListProps {
   onRemove: (id: string) => Promise<void> | void;
 }
 
-const EMPTY_MESSAGES: Record<TodoListProps['filter'], string> = {
-  all: 'No tasks yet.',
-  active: 'No active tasks yet.',
-  completed: 'No completed tasks yet.',
-};
-
 export function TodoList({ todos, filter, onToggle, onUpdate, onRemove }: TodoListProps) {
+  const { t } = useTranslation();
+
   if (todos.length === 0) {
-    return <p className="todo-empty">{EMPTY_MESSAGES[filter]}</p>;
+    return <p className="todo-empty">{t(`empty.${filter}`)}</p>;
   }
 
   return (

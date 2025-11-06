@@ -1,10 +1,5 @@
+import { useTranslation } from 'react-i18next';
 import type { TodoFilter } from '../types';
-
-const FILTER_OPTIONS: Array<{ value: TodoFilter; label: string }> = [
-  { value: 'all', label: 'All' },
-  { value: 'active', label: 'Active' },
-  { value: 'completed', label: 'Completed' },
-];
 
 interface TodoFiltersProps {
   value: TodoFilter;
@@ -13,9 +8,16 @@ interface TodoFiltersProps {
 }
 
 export function TodoFilters({ value, counts, onChange }: TodoFiltersProps) {
+  const { t } = useTranslation();
+  const options: Array<{ value: TodoFilter; label: string }> = [
+    { value: 'all', label: t('filters.all') },
+    { value: 'active', label: t('filters.active') },
+    { value: 'completed', label: t('filters.completed') },
+  ];
+
   return (
     <nav className="todo-filters" aria-label="Filter todos">
-      {FILTER_OPTIONS.map((option) => (
+      {options.map((option) => (
         <button
           key={option.value}
           type="button"

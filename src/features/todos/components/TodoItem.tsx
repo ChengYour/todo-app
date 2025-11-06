@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Todo } from '../types';
 
 interface TodoItemProps {
@@ -9,6 +10,7 @@ interface TodoItemProps {
 }
 
 export function TodoItem({ todo, onToggle, onUpdate, onRemove }: TodoItemProps) {
+  const { t } = useTranslation();
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(todo.title);
 
@@ -53,7 +55,7 @@ export function TodoItem({ todo, onToggle, onUpdate, onRemove }: TodoItemProps) 
           type="checkbox"
           checked={todo.completed}
           onChange={handleToggle}
-          aria-label="Toggle todo"
+          aria-label={t('todo.toggle')}
         />
         {isEditing ? (
           <input
@@ -81,23 +83,23 @@ export function TodoItem({ todo, onToggle, onUpdate, onRemove }: TodoItemProps) 
             <button
               type="button"
               className="todo-item__action"
-              onMouseDown={(e) => e.preventDefault()}
+              onMouseDown={(event) => event.preventDefault()}
               onClick={handleSave}
             >
-              Save
+              {t('todo.save')}
             </button>
             <button
               type="button"
               className="todo-item__action"
-              onMouseDown={(e) => e.preventDefault()}
+              onMouseDown={(event) => event.preventDefault()}
               onClick={handleCancel}
             >
-              Cancel
+              {t('todo.cancel')}
             </button>
           </>
         ) : (
           <button type="button" className="todo-item__action is-danger" onClick={handleRemove}>
-            Remove
+            {t('todo.remove')}
           </button>
         )}
       </div>

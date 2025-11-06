@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { CreateTodoInput } from '../types';
 
 interface TodoComposerProps {
@@ -6,6 +7,7 @@ interface TodoComposerProps {
 }
 
 export function TodoComposer({ onAdd }: TodoComposerProps) {
+  const { t } = useTranslation();
   const [title, setTitle] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -28,14 +30,14 @@ export function TodoComposer({ onAdd }: TodoComposerProps) {
       <input
         className="todo-composer__input"
         type="text"
-        placeholder="Add a new task"
+        placeholder={t('composer.placeholder')}
         value={title}
         onChange={(event) => setTitle(event.target.value)}
         disabled={isSubmitting}
-        aria-label="Todo title"
+        aria-label={t('composer.placeholder')}
       />
       <button className="todo-composer__submit" type="submit" disabled={isSubmitting}>
-        Add
+        {t('composer.submit')}
       </button>
     </form>
   );
