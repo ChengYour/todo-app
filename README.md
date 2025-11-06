@@ -25,6 +25,7 @@
 - 当前样式纯手写 CSS，没有使用 UI 组件库或 CSS 框架
 - 移动端适配目前依赖弹性布局，若界面变复杂需要根据媒体查询，针对不同的端渲染不同的组件
 - Store 和组件未做性能优化（批处理、虚拟列表等）
+- 添加错误日志
 
 ### 待添加的功能
 
@@ -52,6 +53,7 @@
 - Styling is hand-written CSS; no UI component or CSS utility library is used yet
 - Mobile adaptation relies on flexible layout only; complex screens may need media-query-driven, device-specific components
 - Store/components haven’t been tuned for performance (batching, virtualization, etc.)
+- Add error logs
 
 ### Planned Enhancements
 
