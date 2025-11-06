@@ -113,21 +113,26 @@ body {
 
 .todo-composer {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 0.75rem;
-  background: hsl(210, 40%, 96%);
-  border-radius: 999px;
-  padding: 0.25rem 0.5rem 0.25rem 1rem;
+  background: hsl(210, 45%, 96%);
+  border: 1px solid hsl(210, 40%, 92%);
+  border-radius: 20px;
+  padding: clamp(0.75rem, 2vw, 1rem);
 }
 
 .todo-composer__input {
-  flex: 1;
+  width: 100%;
   border: none;
   background: transparent;
   font-size: 1rem;
-  padding: 0.6rem 0;
+  padding: 0;
+  min-height: 2.75rem;
+  max-height: 15rem;
   color: inherit;
   line-height: 1.4;
+  resize: vertical;
+  overflow: hidden;
 }
 
 .todo-composer__input::placeholder {
@@ -149,6 +154,7 @@ body {
   cursor: pointer;
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
   line-height: 1.2;
+  align-self: flex-end;
 }
 
 .todo-composer__submit:hover:not(:disabled) {
@@ -274,6 +280,7 @@ body {
   white-space: normal;
   word-break: break-word;
   line-height: 1.35;
+  white-space: pre-wrap;
 }
 
 .todo-item__title:focus-visible {
@@ -285,11 +292,15 @@ body {
   flex: 1;
   font-size: 1rem;
   padding: 0.4rem 0.6rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid hsl(210, 30%, 85%);
   background: hsl(210, 40%, 97%);
   color: inherit;
   line-height: 1.4;
+  min-height: 2.5rem;
+  max-height: 12rem;
+  resize: vertical;
+  overflow: hidden;
 }
 
 .todo-item__input:focus {
@@ -316,7 +327,18 @@ body {
   line-height: 1.2;
 }
 
-.todo-item__action:hover {
+.todo-item__action.is-primary {
+  background: hsl(222, 89%, 60%);
+  color: #fff;
+  box-shadow: 0 10px 18px rgba(59, 130, 246, 0.25);
+}
+
+.todo-item__action.is-primary:hover {
+  transform: translateY(-1px);
+  background: hsl(222, 89%, 55%);
+}
+
+.todo-item__action:hover:not(.is-primary):not(.is-danger) {
   transform: translateY(-1px);
   background: hsl(210, 40%, 93%);
 }
@@ -327,6 +349,7 @@ body {
 }
 
 .todo-item__action.is-danger:hover {
+  transform: translateY(-1px);
   background: hsl(0, 72%, 63%);
 }
 
